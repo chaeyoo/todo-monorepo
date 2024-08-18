@@ -9,7 +9,9 @@
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
-    "start": "cd apps/web && serve -s dist"
+    "start": "cd apps/web && serve -s dist",
+    "build:shared": "turbo run build --scope=shared",
+    "build:web": "turbo run build --scope=web"
   },
   "devDependencies": {
     "serve": "^14.2.3",

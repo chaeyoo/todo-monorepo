@@ -13,10 +13,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
     "@supabase/supabase-js": "^2.45.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "shared": "workspace:*"
+    "shared": "workspace:*",
+    "zustand": "^4.5.5"
   },
   "devDependencies": {
     "@types/node": "^22.4.0",
