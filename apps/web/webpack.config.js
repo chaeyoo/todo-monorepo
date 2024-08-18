@@ -3,8 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = (env) => {
-  const isProduction = env.production === true;
-
+  const isProduction = env.environment === 'production';
   return {
     entry: './src/index.tsx',
     output: {
