@@ -1,0 +1,22 @@
+{
+  "name": "todo-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "start": "cd apps/web && serve -s dist"
+  },
+  "devDependencies": {
+    "serve": "^14.2.3",
+    "turbo": "^1.10.0",
+    "typescript": "^4.9.5"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

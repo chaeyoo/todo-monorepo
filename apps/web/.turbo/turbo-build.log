@@ -1,0 +1,22 @@
+
+> web@1.0.0 build C:\chaehyeong\front-workspace\todo-monorepo\apps\web
+> webpack --mode production
+
+asset [1m[32mbundle.js[39m[22m 137 KiB [1m[32m[emitted][39m[22m [1m[32m[minimized][39m[22m (name: main) 1 related asset
+asset [1m[32mindex.html[39m[22m 244 bytes [1m[32m[emitted][39m[22m
+modules by path [1m../../node_modules/.pnpm/react@18.3.1/node_modules/react/[39m[22m 8 KiB
+  modules by path [1m../../node_modules/.pnpm/react@18.3.1/node_modules/react/*.js[39m[22m 404 bytes
+    [1m../../node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js[39m[22m 214 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m../../node_modules/.pnpm/react@18.3.1/node_modules/react/index.js[39m[22m 190 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  modules by path [1m../../node_modules/.pnpm/react@18.3.1/node_modules/react/cjs/*.js[39m[22m 7.61 KiB
+    [1m../../node_modules/.pnpm/react@18.3.1/node_modules/react/cjs/react-jsx-runtime.p...(truncated)[39m[22m 859 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m../../node_modules/.pnpm/react@18.3.1/node_modules/react/cjs/react.pro...(truncated)[39m[22m 6.77 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+modules by path [1m../../node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/[39m[22m 131 KiB
+  [1m../../node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react...(truncated)[39m[22m 619 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  [1m../../node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/reac...(truncated)[39m[22m 1.33 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  [1m../../node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cj...(truncated)[39m[22m 129 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+modules by path [1m../../node_modules/.pnpm/scheduler@0.23.2/node_modules/scheduler/[39m[22m 4.33 KiB
+  [1m../../node_modules/.pnpm/scheduler@0.23.2/node_modules/scheduler/index.js[39m[22m 198 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  [1m../../node_modules/.pnpm/scheduler@0.23.2/node_modules/scheduler/cjs/scheduler.p...(truncated)[39m[22m 4.14 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+[1m./src/index.tsx[39m[22m 248 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+webpack 5.93.0 compiled [1m[32msuccessfully[39m[22m in 12122 ms
