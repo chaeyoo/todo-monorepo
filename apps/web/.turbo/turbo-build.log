@@ -2,47 +2,31 @@
 > web@1.0.0 build C:\chaehyeong\front-workspace\todo-monorepo\apps\web
 > webpack --mode production --env environment=production
 
-assets by status 137 KiB [1m[32m[cached][39m[22m 2 assets
-modules by path [1m../../node_modules/.pnpm/react@18.3.1/node_modules/react/[39m[22m 8 KiB
-  modules by path [1m../../node_modules/.pnpm/react@18.3.1/node_modules/react/*.js[39m[22m 404 bytes
-    [1m../../node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js[39m[22m 214 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
-    [1m../../node_modules/.pnpm/react@18.3.1/node_modules/react/index.js[39m[22m 190 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
-  modules by path [1m../../node_modules/.pnpm/react@18.3.1/node_modules/react/cjs/*.js[39m[22m 7.61 KiB
-    [1m../../node_modules/.pnpm/react@18.3.1/node_modules/react/cjs/react-jsx-runtime.p...(truncated)[39m[22m 859 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
-    [1m../../node_modules/.pnpm/react@18.3.1/node_modules/react/cjs/react.pro...(truncated)[39m[22m 6.77 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
-modules by path [1m../../node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/[39m[22m 131 KiB
-  [1m../../node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react...(truncated)[39m[22m 619 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
-  [1m../../node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/reac...(truncated)[39m[22m 1.33 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
-  [1m../../node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cj...(truncated)[39m[22m 129 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
-modules by path [1m../../node_modules/.pnpm/scheduler@0.23.2/node_modules/scheduler/[39m[22m 4.33 KiB
-  [1m../../node_modules/.pnpm/scheduler@0.23.2/node_modules/scheduler/index.js[39m[22m 198 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
-  [1m../../node_modules/.pnpm/scheduler@0.23.2/node_modules/scheduler/cjs/scheduler.p...(truncated)[39m[22m 4.14 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
-[1m./src/index.tsx[39m[22m 271 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+assets by status 213 bytes [1m[32m[cached][39m[22m 1 asset
+asset [1m[33mbundle.6a731f7b1b05c14e470f.js[39m[22m [1m[33m276 KiB[39m[22m [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[minimized][39m[22m [1m[33m[big][39m[22m (name: main) 1 related asset
+asset [1m[32mindex.html[39m[22m 274 bytes [1m[32m[emitted][39m[22m [1m[33m[compared for emit][39m[22m
+orphan modules 348 KiB [1m[33m[orphan][39m[22m 83 modules
+runtime modules 6.95 KiB 10 modules
+cacheable modules 526 KiB
+  modules by path [1m../../node_modules/.pnpm/[39m[22m 431 KiB 25 modules
+  modules by path [1m../../packages/shared/dist/[39m[22m 4.98 KiB
+    modules by path [1m../../packages/shared/dist/*.js[39m[22m 4.53 KiB
+      [1m../../packages/shared/dist/index.js[39m[22m 966 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+      [1m../../packages/shared/dist/supabase.js[39m[22m 370 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+      [1m../../packages/shared/dist/auth.js[39m[22m 3.23 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m../../packages/shared/dist/types/todo.js[39m[22m 79 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m../../packages/shared/dist/utils/todoUtils.js[39m[22m 378 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  [1m./src/index.tsx + 31 modules[39m[22m 89.8 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
 
-[1m[31mERROR[39m[22m in [1m./src/index.tsx[39m[22m [1m[32m2:0-22[39m[22m
-[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'App' in 'C:\chaehyeong\front-workspace\todo-monorepo\apps\web\src'
-[1m[32mDid you mean './App'?[39m[22m[1m
-Requests that should resolve in the current directory need to start with './'.
-Requests that start with a name are treated as module requests and resolve within module directories (node_modules).
-If changing the source code is not an option there is also a resolve options called 'preferRelative' which tries to resolve these kind of requests in the current directory too.[39m[22m
+[1m[33mWARNING[39m[22m in [1masset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+This can impact web performance.
+Assets: 
+  bundle.6a731f7b1b05c14e470f.js (276 KiB)[39m[22m
 
-[1m[31mERROR[39m[22m in [1mC:\chaehyeong\front-workspace\todo-monorepo\apps\web\src\App.tsx[39m[22m
-[1m[32m3:25-48[39m[22m
-[1m[tsl] [1m[31mERROR[39m[22m[1m in C:\chaehyeong\front-workspace\todo-monorepo\apps\web\src\App.tsx(3,26)
-      TS2306: File 'C:\chaehyeong\front-workspace\todo-monorepo\apps\web\src\components\TodoList.tsx' is not a module.[39m[22m
+[1m[33mWARNING[39m[22m in [1mentrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+Entrypoints:
+  main (276 KiB)
+      bundle.6a731f7b1b05c14e470f.js
+[39m[22m
 
-[1m[31mERROR[39m[22m in [1mC:\chaehyeong\front-workspace\todo-monorepo\apps\web\src\components\TodoForm.tsx[39m[22m
-[1m[32m3:29-49[39m[22m
-[1m[tsl] [1m[31mERROR[39m[22m[1m in C:\chaehyeong\front-workspace\todo-monorepo\apps\web\src\components\TodoForm.tsx(3,30)
-      TS2306: File 'C:\chaehyeong\front-workspace\todo-monorepo\apps\web\src\store\todoStore.ts' is not a module.[39m[22m
-
-[1m[31mERROR[39m[22m in [1mC:\chaehyeong\front-workspace\todo-monorepo\apps\web\src\components\TodoForm.tsx[39m[22m
-[1m[32m30:31-36[39m[22m
-[1m[tsl] [1m[31mERROR[39m[22m[1m in C:\chaehyeong\front-workspace\todo-monorepo\apps\web\src\components\TodoForm.tsx(30,32)
-      TS7006: Parameter 'state' implicitly has an 'any' type.[39m[22m
-
-[1m[33m4 errors have detailed information that is not shown.
-Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.[39m[22m
-
-webpack 5.93.0 compiled with [1m[31m4 errors[39m[22m in 21425 ms
- ELIFECYCLE  Command failed with exit code 1.
+webpack 5.93.0 compiled with [1m[33m2 warnings[39m[22m in 24626 ms

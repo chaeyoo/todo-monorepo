@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+const webpack = require('webpack');
 
 module.exports = (env) => {
   const isProduction = env.environment === 'production';
@@ -12,7 +13,14 @@ module.exports = (env) => {
       publicPath: '/'
     },
     resolve: {
-      extensions: ['.ts', '.tsx', '.js', '.jsx']
+      extensions: ['.ts', '.tsx', '.js', '.jsx'],
+      fallback: {
+        stream: require.resolve('stream-browserify'),
+        process: require.resolve('process/browser'),
+        crypto: require.resolve('crypto-browserify'),
+        buffer: require.resolve('buffer/'),
+        vm: require.resolve('vm-browserify'),
+      },
     },
     module: {
       rules: [
@@ -29,7 +37,12 @@ module.exports = (env) => {
       }),
       new Dotenv({
         path: isProduction ? '.env.production' : '.env.local'
-      })
+      }),
+      new webpack.ProvidePlugin({
+        process: 'process/browser',
+        Buffer: ['buffer', 'Buffer'],
+      }),
+
     ],
     devServer: {
       static: {
