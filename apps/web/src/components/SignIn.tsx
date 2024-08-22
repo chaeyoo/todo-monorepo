@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import { signIn } from "shared";
+import { useAuthStore } from "../store/authStore";
 
 export const SignIn: React.FC = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-
+	const setUser = useAuthStore((state) => state.setUser);
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
 		try {
 			const user = await signIn(email, password);
 			console.log("Signed in:", user);
+			setUser(user);
 		} catch (error) {
 			console.error("Error signing in:", error);
 		}
