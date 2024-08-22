@@ -3,7 +3,12 @@ import styled from "@emotion/styled";
 import { TodoList } from "./components/TodoList";
 import { TodoForm } from "./components/TodoForm";
 import { theme } from "./styles/theme";
-import { getCurrentUser, UserProfile } from "shared";
+import {
+	BrowserRouter as Router,
+	Routes,
+	Route,
+	Navigate,
+} from "react-router-dom";
 import { useEffect, useState } from "react";
 import { UserInfo } from "./components/UserInfo";
 import { SignUp } from "./components/SignUp";
@@ -76,24 +81,38 @@ function App() {
 
 	return (
 		<ThemeProvider theme={theme}>
-			<AppWrapper>
-				<Header>
-					<Title>Todo App</Title>
-					{user && <LogoutButton onClick={handleLogout}>Logout</LogoutButton>}
-				</Header>
-				<UserInfo user={user} />
-				{user ? (
-					<>
-						<TodoForm />
-						<TodoList />
-					</>
-				) : (
-					<>
-						<SignUp />
-						<SignIn />
-					</>
-				)}
-			</AppWrapper>
+			<Router>
+				<AppWrapper>
+					<Header>
+						<Title>Todo App</Title>
+						{user && <LogoutButton onClick={handleLogout}>Logout</LogoutButton>}
+					</Header>
+					<Routes>
+						<Route
+							path="/signin"
+							element={user ? <Navigate to="/" /> : <SignIn />}
+						/>
+						<Route
+							path="/signup"
+							element={user ? <Navigate to="/" /> : <SignUp />}
+						/>
+						<Route
+							path="/"
+							element={
+								user ? (
+									<>
+										<UserInfo user={user} />
+										<TodoForm />
+										<TodoList />
+									</>
+								) : (
+									<Navigate to="/signin" />
+								)
+							}
+						/>
+					</Routes>
+				</AppWrapper>
+			</Router>
 		</ThemeProvider>
 	);
 }

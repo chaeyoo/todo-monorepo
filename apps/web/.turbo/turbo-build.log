@@ -3,30 +3,30 @@
 > webpack --mode production --env environment=production
 
 assets by status 213 bytes [1m[32m[cached][39m[22m 1 asset
-asset [1m[33mbundle.f7e723ae85c0fe8491c5.js[39m[22m [1m[33m278 KiB[39m[22m [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[minimized][39m[22m [1m[33m[big][39m[22m (name: main) 1 related asset
+asset [1m[33mbundle.da0047f5bf5c541a9635.js[39m[22m [1m[33m295 KiB[39m[22m [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[minimized][39m[22m [1m[33m[big][39m[22m (name: main) 1 related asset
 asset [1m[32mindex.html[39m[22m 274 bytes [1m[32m[emitted][39m[22m [1m[33m[compared for emit][39m[22m
-orphan modules 352 KiB [1m[33m[orphan][39m[22m 84 modules
+orphan modules 658 KiB [1m[33m[orphan][39m[22m 87 modules
 runtime modules 6.95 KiB 10 modules
-cacheable modules 530 KiB
+cacheable modules 780 KiB
   modules by path [1m../../node_modules/.pnpm/[39m[22m 431 KiB 25 modules
-  modules by path [1m../../packages/shared/dist/[39m[22m 4.98 KiB
-    modules by path [1m../../packages/shared/dist/*.js[39m[22m 4.53 KiB
+  modules by path [1m../../packages/shared/dist/[39m[22m 5.2 KiB
+    modules by path [1m../../packages/shared/dist/*.js[39m[22m 4.75 KiB
       [1m../../packages/shared/dist/index.js[39m[22m 966 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
       [1m../../packages/shared/dist/supabase.js[39m[22m 370 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
-      [1m../../packages/shared/dist/auth.js[39m[22m 3.23 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+      [1m../../packages/shared/dist/auth.js[39m[22m 3.45 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
     [1m../../packages/shared/dist/types/todo.js[39m[22m 79 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
     [1m../../packages/shared/dist/utils/todoUtils.js[39m[22m 378 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
-  [1m./src/index.tsx + 32 modules[39m[22m 93.7 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  [1m./src/index.tsx + 34 modules[39m[22m 344 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
 
 [1m[33mWARNING[39m[22m in [1masset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
 This can impact web performance.
 Assets: 
-  bundle.f7e723ae85c0fe8491c5.js (278 KiB)[39m[22m
+  bundle.da0047f5bf5c541a9635.js (295 KiB)[39m[22m
 
 [1m[33mWARNING[39m[22m in [1mentrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
 Entrypoints:
-  main (278 KiB)
-      bundle.f7e723ae85c0fe8491c5.js
+  main (295 KiB)
+      bundle.da0047f5bf5c541a9635.js
 [39m[22m
 
-webpack 5.93.0 compiled with [1m[33m2 warnings[39m[22m in 21852 ms
+webpack 5.93.0 compiled with [1m[33m2 warnings[39m[22m in 18780 ms

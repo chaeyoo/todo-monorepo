@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getCurrentUser = exports.signIn = exports.signUp = void 0;
+exports.signOut = exports.getCurrentUser = exports.signIn = exports.signUp = void 0;
 const supabase_1 = require("./supabase");
 const signUp = (email, password, nickname) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -86,3 +86,9 @@ const getCurrentUser = () => __awaiter(void 0, void 0, void 0, function* () {
     return null;
 });
 exports.getCurrentUser = getCurrentUser;
+const signOut = () => __awaiter(void 0, void 0, void 0, function* () {
+    const { error } = yield supabase_1.supabase.auth.signOut();
+    if (error)
+        throw error;
+});
+exports.signOut = signOut;

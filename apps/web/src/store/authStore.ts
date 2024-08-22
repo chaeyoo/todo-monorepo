@@ -29,33 +29,55 @@ export const useAuthStore = create<AuthStore>((set) => ({
 		try {
 			const {
 				data: { session },
-				error,
+				error: sessionError,
 			} = await supabase.auth.getSession();
-			if (error) throw error;
+
+			if (sessionError) {
+				throw sessionError;
+			}
 
 			if (session) {
-				const currentUser = await getCurrentUser();
-				set({ user: currentUser, loading: false });
+				try {
+					const currentUser = await getCurrentUser();
+					set({ user: currentUser, loading: false });
+				} catch (userError) {
+					console.error("Error fetching current user:", userError);
+					set({
+						user: null,
+						loading: false,
+						error:
+							userError instanceof Error
+								? userError.message
+								: "Failed to fetch user data",
+					});
+				}
 			} else {
 				set({ user: null, loading: false });
 			}
 		} catch (error) {
-			console.error("Error checking user:", error);
+			console.error("Error checking session:", error);
 			set({
 				user: null,
 				loading: false,
 				error:
-					error instanceof Error ? error.message : "Failed to fetch user data",
+					error instanceof Error
+						? error.message
+						: "Failed to check user session",
 			});
 		}
 	},
 	signOut: async () => {
-		const { error } = await supabase.auth.signOut();
-		if (error) {
-			console.error("Error signing out:", error);
-			set({ error: error.message });
-		} else {
+		try {
+			const { error } = await supabase.auth.signOut();
+			if (error) {
+				throw error;
+			}
 			set({ user: null, error: null });
+		} catch (error) {
+			console.error("Error signing out:", error);
+			set({
+				error: error instanceof Error ? error.message : "Failed to sign out",
+			});
 		}
 	},
 }));
