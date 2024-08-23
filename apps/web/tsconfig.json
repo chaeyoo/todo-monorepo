@@ -17,7 +17,8 @@
 		"jsx": "react-jsx",
 		"baseUrl": ".",
 		"paths": {
-			"*": ["src/*"]
+			"*": ["src/*"],
+			"shared/*": ["../../packages/shared/src/*"]
 		},
 		"typeRoots": ["../../node_modules/@types", "./node_modules/@types"]
 	},

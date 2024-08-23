@@ -1,47 +1,41 @@
 import React, { useState } from "react";
 import { signIn } from "shared";
 import styled from "@emotion/styled";
-
 import { useAuthStore } from "../store/authStore";
 import { useNavigate } from "react-router-dom";
+import { colors, commonStyles } from "shared/src/styles/todoStyles";
+
+const FormContainer = styled.div`
+	${commonStyles.container}
+	max-width: 400px;
+	margin: 40px auto;
+`;
+
 const Form = styled.form`
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
+	gap: 20px;
 `;
 
 const Input = styled.input`
-	padding: 10px;
-	border-radius: 5px;
-	border: 1px solid #ccc;
+	${commonStyles.input}
 `;
 
 const Button = styled.button`
-	padding: 10px;
-	background-color: ${(props) => props.theme.colors.primary};
-	color: white;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-
-	&:hover {
-		background-color: ${(props) => props.theme.colors.secondary};
-	}
+	${commonStyles.button}
 `;
 
 const SignUpButton = styled(Button)`
-	background-color: ${(props) => props.theme.colors.secondary};
-	margin-top: 10px;
-
+	color: ${colors.primary}
+	background-color: ${colors.secondary};
 	&:hover {
-		background-color: ${(props) => props.theme.colors.primary};
+		background-color: ${colors.accent};
 	}
 `;
 
 const ErrorMessage = styled.p`
-	color: red;
-	font-size: 14px;
-	margin-top: 5px;
+	color: #d32f2f;
+	font-size: 0.9rem;
 	text-align: center;
 `;
 
@@ -71,26 +65,28 @@ export const SignIn: React.FC = () => {
 	};
 
 	return (
-		<Form onSubmit={handleSubmit}>
-			<Input
-				type="email"
-				value={email}
-				onChange={(e) => setEmail(e.target.value)}
-				placeholder="Email"
-				required
-			/>
-			<Input
-				type="password"
-				value={password}
-				onChange={(e) => setPassword(e.target.value)}
-				placeholder="Password"
-				required
-			/>
-			{error && <ErrorMessage>{error}</ErrorMessage>}
-			<Button type="submit">Sign In</Button>
-			<SignUpButton type="button" onClick={handleSignUpClick}>
-				Sign Up
-			</SignUpButton>
-		</Form>
+		<FormContainer>
+			<Form onSubmit={handleSubmit}>
+				<Input
+					type="email"
+					value={email}
+					onChange={(e) => setEmail(e.target.value)}
+					placeholder="Email"
+					required
+				/>
+				<Input
+					type="password"
+					value={password}
+					onChange={(e) => setPassword(e.target.value)}
+					placeholder="Password"
+					required
+				/>
+				{error && <ErrorMessage>{error}</ErrorMessage>}
+				<Button type="submit">로그인</Button>
+				<SignUpButton type="button" onClick={handleSignUpClick}>
+					회원가입
+				</SignUpButton>
+			</Form>
+		</FormContainer>
 	);
 };

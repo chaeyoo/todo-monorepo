@@ -3,50 +3,40 @@ import { useNavigate } from "react-router-dom";
 import styled from "@emotion/styled";
 import { signUp } from "shared";
 import { useAuthStore } from "../store/authStore";
+import { colors, commonStyles } from "shared/src/styles/todoStyles";
+
+const FormContainer = styled.div`
+	${commonStyles.container}
+	max-width: 400px;
+	margin: 40px auto;
+`;
 
 const Form = styled.form`
 	display: flex;
 	flex-direction: column;
-	gap: 15px;
-	max-width: 300px;
-	margin: 0 auto;
+	gap: 20px;
 `;
 
 const Input = styled.input`
-	padding: 10px;
-	border-radius: 5px;
-	border: 1px solid #ccc;
-	font-size: 16px;
+	${commonStyles.input}
 `;
 
 const Button = styled.button`
-	padding: 10px;
-	background-color: ${(props) => props.theme.colors.primary};
-	color: white;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	font-size: 16px;
-	transition: background-color 0.3s;
-
-	&:hover {
-		background-color: ${(props) => props.theme.colors.secondary};
-	}
+	${commonStyles.button}
 `;
 
-const SignInButton = styled(Button)`
-	background-color: ${(props) => props.theme.colors.secondary};
-	margin-top: 10px;
-
+const SignInButton = styled(Button)`\
+	color: ${colors.primary}
+	background-color: ${colors.secondary};
 	&:hover {
-		background-color: ${(props) => props.theme.colors.primary};
+		background-color: ${colors.accent};
 	}
 `;
 
 const ErrorMessage = styled.p`
-	color: red;
-	font-size: 14px;
-	margin-top: 5px;
+	color: #d32f2f;
+	font-size: 0.9rem;
+	text-align: center;
 `;
 
 export const SignUp: React.FC = () => {
@@ -72,7 +62,7 @@ export const SignUp: React.FC = () => {
 			if (user) {
 				console.log("Signed up:", user);
 				setUser(user);
-				navigate("/"); // Redirect to home page after successful signup
+				navigate("/");
 			} else {
 				setError("Signup failed. Please try again.");
 			}
@@ -89,40 +79,42 @@ export const SignUp: React.FC = () => {
 	};
 
 	return (
-		<Form onSubmit={handleSubmit}>
-			<Input
-				type="email"
-				value={email}
-				onChange={(e) => setEmail(e.target.value)}
-				placeholder="Email"
-				required
-			/>
-			<Input
-				type="password"
-				value={password}
-				onChange={(e) => setPassword(e.target.value)}
-				placeholder="Password"
-				required
-			/>
-			<Input
-				type="password"
-				value={confirmPassword}
-				onChange={(e) => setConfirmPassword(e.target.value)}
-				placeholder="Confirm Password"
-				required
-			/>
-			<Input
-				type="text"
-				value={nickname}
-				onChange={(e) => setNickname(e.target.value)}
-				placeholder="Nickname"
-				required
-			/>
-			{error && <ErrorMessage>{error}</ErrorMessage>}
-			<Button type="submit">Sign Up</Button>
-			<SignInButton type="button" onClick={handleSignInClick}>
-				Back to Sign In
-			</SignInButton>
-		</Form>
+		<FormContainer>
+			<Form onSubmit={handleSubmit}>
+				<Input
+					type="email"
+					value={email}
+					onChange={(e) => setEmail(e.target.value)}
+					placeholder="Email"
+					required
+				/>
+				<Input
+					type="password"
+					value={password}
+					onChange={(e) => setPassword(e.target.value)}
+					placeholder="Password"
+					required
+				/>
+				<Input
+					type="password"
+					value={confirmPassword}
+					onChange={(e) => setConfirmPassword(e.target.value)}
+					placeholder="Confirm Password"
+					required
+				/>
+				<Input
+					type="text"
+					value={nickname}
+					onChange={(e) => setNickname(e.target.value)}
+					placeholder="Nickname"
+					required
+				/>
+				{error && <ErrorMessage>{error}</ErrorMessage>}
+				<Button type="submit">가입하기</Button>
+				<SignInButton type="button" onClick={handleSignInClick}>
+					로그인하러 가기
+				</SignInButton>
+			</Form>
+		</FormContainer>
 	);
 };
