@@ -29,9 +29,9 @@ const Button = styled.button`
 
 interface Props {
 	todo: Todo;
-	onToggle: (id: string) => void;
-	onUpdate: (id: string, title: string) => void;
-	onDelete: (id: string) => void;
+	onToggle: (id: string) => Promise<void>;
+	onUpdate: (id: string, title: string) => Promise<void>;
+	onDelete: (id: string) => Promise<void>;
 }
 
 export const TodoItem: React.FC<Props> = ({
@@ -42,18 +42,47 @@ export const TodoItem: React.FC<Props> = ({
 }) => {
 	const [isEditing, setIsEditing] = useState(false);
 	const [editTitle, setEditTitle] = useState(todo.title);
+	const [isUpdating, setIsUpdating] = useState(false);
 
-	const handleUpdate = () => {
-		onUpdate(todo.id, editTitle);
-		setIsEditing(false);
+	const handleUpdate = async () => {
+		if (editTitle.trim() !== todo.title) {
+			setIsUpdating(true);
+			try {
+				await onUpdate(todo.id, editTitle);
+				setIsEditing(false);
+			} catch (error) {
+				console.error("Failed to update todo:", error);
+				// 에러 처리 (예: 사용자에게 알림)
+			} finally {
+				setIsUpdating(false);
+			}
+		} else {
+			setIsEditing(false);
+		}
 	};
 
+	const handleToggle = async () => {
+		try {
+			await onToggle(todo.id);
+		} catch (error) {
+			console.error("Failed to toggle todo:", error);
+		}
+	};
+
+	const handleDelete = async () => {
+		try {
+			await onDelete(todo.id);
+		} catch (error) {
+			console.error("Failed to delete todo:", error);
+		}
+	};
 	return (
 		<TodoItemWrapper completed={todo.completed}>
 			<input
 				type="checkbox"
 				checked={todo.completed}
-				onChange={() => onToggle(todo.id)}
+				onChange={handleToggle}
+				disabled={isUpdating}
 			/>
 			{isEditing ? (
 				<>
@@ -62,16 +91,25 @@ export const TodoItem: React.FC<Props> = ({
 						onChange={(e) => setEditTitle(e.target.value)}
 						onBlur={handleUpdate}
 						autoFocus
+						disabled={isUpdating}
 					/>
-					<Button onClick={handleUpdate}>Save</Button>
+					<Button onClick={handleUpdate} disabled={isUpdating}>
+						{isUpdating ? "Saving..." : "Save"}
+					</Button>
 				</>
 			) : (
 				<>
 					<TodoTitle completed={todo.completed}>{todo.title}</TodoTitle>
-					<Button onClick={() => setIsEditing(true)}>Edit</Button>
+					<Button onClick={() => setIsEditing(true)} disabled={isUpdating}>
+						Edit
+					</Button>
 				</>
 			)}
-			<Button onClick={() => onDelete(todo.id)}>Delete</Button>
+			{!isEditing && (
+				<Button onClick={handleDelete} disabled={isUpdating}>
+					Delete
+				</Button>
+			)}
 		</TodoItemWrapper>
 	);
 };

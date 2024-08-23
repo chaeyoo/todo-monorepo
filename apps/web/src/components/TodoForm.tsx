@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { useTodoStore } from "../store/todoStore";
+import { useAuthStore } from "../store/authStore";
 
 const Form = styled.form`
 	display: flex;
@@ -23,29 +24,58 @@ const Button = styled.button`
 	border: none;
 	border-radius: 0 4px 4px 0;
 	cursor: pointer;
+	&:disabled {
+		background-color: #cccccc;
+		cursor: not-allowed;
+	}
+`;
+
+const ErrorMessage = styled.p`
+	color: red;
+	font-size: 14px;
+	margin-top: 5px;
 `;
 
 export const TodoForm: React.FC = () => {
 	const [title, setTitle] = useState("");
+	const [error, setError] = useState<string | null>(null);
+	const [isAdding, setIsAdding] = useState(false);
 	const addTodo = useTodoStore((state) => state.addTodo);
+	const user = useAuthStore((state) => state.user);
 
-	const handleSubmit = (e: React.FormEvent) => {
+	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
-		if (title.trim()) {
-			addTodo(title);
-			setTitle("");
+		setError(null);
+		if (title.trim() && user) {
+			setIsAdding(true);
+			try {
+				await addTodo(title, user.id);
+				setTitle("");
+				console.log("Todo added successfully");
+			} catch (err) {
+				setError("Failed to add todo. Please try again.");
+				console.error("Error adding todo:", err);
+			} finally {
+				setIsAdding(false);
+			}
 		}
 	};
-
 	return (
-		<Form onSubmit={handleSubmit}>
-			<Input
-				type="text"
-				value={title}
-				onChange={(e) => setTitle(e.target.value)}
-				placeholder="Add a new todo"
-			/>
-			<Button type="submit">Add</Button>
-		</Form>
+		<>
+			<Form onSubmit={handleSubmit}>
+				<Input
+					type="text"
+					value={title}
+					onChange={(e) => setTitle(e.target.value)}
+					placeholder="Add a new todo"
+					disabled={!user || isAdding}
+				/>
+				<Button type="submit" disabled={!user || isAdding}>
+					{isAdding ? "Adding..." : "Add"}
+				</Button>
+			</Form>
+			{error && <ErrorMessage>{error}</ErrorMessage>}
+			{!user && <ErrorMessage>Please log in to add todos.</ErrorMessage>}
+		</>
 	);
 };
