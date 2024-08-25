@@ -19,7 +19,6 @@ exports.commonStyles = {
     padding: 20px;
   `,
     input: `
-    width: 100%;
     padding: 10px 12px;
     border: 1px solid ${exports.colors.primary};
     border-radius: 0;

@@ -3,7 +3,7 @@
 > webpack --mode production --env environment=production
 
 assets by status 213 bytes [1m[32m[cached][39m[22m 1 asset
-asset [1m[33mbundle.5b1bf047aa2bd7e135bb.js[39m[22m [1m[33m320 KiB[39m[22m [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[minimized][39m[22m [1m[33m[big][39m[22m (name: main) 1 related asset
+asset [1m[33mbundle.80d27ca4f92955a107a2.js[39m[22m [1m[33m320 KiB[39m[22m [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[minimized][39m[22m [1m[33m[big][39m[22m (name: main) 1 related asset
 asset [1m[32mindex.html[39m[22m 274 bytes [1m[32m[emitted][39m[22m [1m[33m[compared for emit][39m[22m
 orphan modules 686 KiB [1m[33m[orphan][39m[22m 85 modules
 runtime modules 6.95 KiB 10 modules
@@ -21,12 +21,12 @@ cacheable modules 883 KiB
 [1m[33mWARNING[39m[22m in [1masset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
 This can impact web performance.
 Assets: 
-  bundle.5b1bf047aa2bd7e135bb.js (320 KiB)[39m[22m
+  bundle.80d27ca4f92955a107a2.js (320 KiB)[39m[22m
 
 [1m[33mWARNING[39m[22m in [1mentrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
 Entrypoints:
   main (320 KiB)
-      bundle.5b1bf047aa2bd7e135bb.js
+      bundle.80d27ca4f92955a107a2.js
 [39m[22m
 
-webpack 5.93.0 compiled with [1m[33m2 warnings[39m[22m in 17693 ms
+webpack 5.93.0 compiled with [1m[33m2 warnings[39m[22m in 22520 ms

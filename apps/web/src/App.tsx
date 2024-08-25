@@ -30,6 +30,7 @@ const Title = styled.h1`
   margin-bottom: 20px;
   font-weight: 300;
   letter-spacing: 2px;
+  font-weight :bold;
 `;
 
 const LoadingWrapper = styled.div`
@@ -94,7 +95,7 @@ function App() {
       <Router>
         <AppWrapper>
           <Header>
-            <Title>할 일 목록</Title>
+            <Title>할 일에 대하여</Title>
             {user && <LogoutButton onClick={handleLogout}>로그아웃</LogoutButton>}
           </Header>
           <Routes>
