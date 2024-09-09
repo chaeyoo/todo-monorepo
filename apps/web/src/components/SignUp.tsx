@@ -85,28 +85,28 @@ export const SignUp: React.FC = () => {
 					type="email"
 					value={email}
 					onChange={(e) => setEmail(e.target.value)}
-					placeholder="Email"
+					placeholder="이메일"
 					required
 				/>
 				<Input
 					type="password"
 					value={password}
 					onChange={(e) => setPassword(e.target.value)}
-					placeholder="Password"
+					placeholder="비밀번호"
 					required
 				/>
 				<Input
 					type="password"
 					value={confirmPassword}
 					onChange={(e) => setConfirmPassword(e.target.value)}
-					placeholder="Confirm Password"
+					placeholder="비밀번호 확인"
 					required
 				/>
 				<Input
 					type="text"
 					value={nickname}
 					onChange={(e) => setNickname(e.target.value)}
-					placeholder="Nickname"
+					placeholder="닉네임"
 					required
 				/>
 				{error && <ErrorMessage>{error}</ErrorMessage>}

@@ -71,14 +71,14 @@ export const SignIn: React.FC = () => {
 					type="email"
 					value={email}
 					onChange={(e) => setEmail(e.target.value)}
-					placeholder="Email"
+					placeholder="이메일"
 					required
 				/>
 				<Input
 					type="password"
 					value={password}
 					onChange={(e) => setPassword(e.target.value)}
-					placeholder="Password"
+					placeholder="비밀번호"
 					required
 				/>
 				{error && <ErrorMessage>{error}</ErrorMessage>}
