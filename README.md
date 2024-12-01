@@ -26,8 +26,6 @@
 - Amplify
 
 ## DEMO
-- [할일에 대하여](https://main.d38wyme95zjr0p.amplifyapp.com/)
-- 테스트 계정: ID - test2@email.com | PW - 123456
 <img src="https://github.com/user-attachments/assets/27d1f02f-c2fa-4c7a-83e0-2005134219ce" width="300" height="500"/>
 <img src="https://github.com/user-attachments/assets/c4ad6cb4-e6bd-4bfb-b99b-664eb7cacd36" width="300" height="500"/>
 <img src="https://github.com/user-attachments/assets/16c743fa-fcbb-4f8b-9f66-5ac115c692c0" width="300" height="500"/>
